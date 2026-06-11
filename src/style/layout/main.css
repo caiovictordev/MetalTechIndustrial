@@ -1,0 +1,117 @@
+.cadastro{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.left{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: var(--corPrincipal);
+    color: var(--corSecundaria);
+    border-top-right-radius: 300px;
+    border-bottom-right-radius: 300px;
+}
+.txtCadastro{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+}
+.txtCadastro h1{
+    font-size: 2rem;
+}
+.txtCadastro h2{
+    font-size: 1rem;
+}
+.bi-arrow-right-circle-fill{
+    position: absolute;
+    top: 50%;
+    left: 98%;
+    font-size: 2rem;
+    color: var(--btnCor);
+    text-shadow: 1px 1px 3px rgba(128, 128, 128, 0.384);
+}
+.left h1{
+    font-size: 3rem;
+}
+.left p strong{
+    font-size: 3.5rem;
+}
+.left p{
+    font-size: 1.5rem;
+}
+.left p ~ p{
+    font-size: 1rem;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dados{
+    display: flex;
+    flex-direction: column;
+}
+.btnSubmit{
+    padding: 0.4rem 2rem;
+    text-transform: uppercase;
+    color: var(--corSecundaria);
+    font-weight: 700;
+    border-radius: 15px;
+    background-color: var(--btnCor);
+    border: none;
+    margin-top: 20px;
+    transition: .5s ease;
+}
+.btnSubmit:hover{
+    transform: translateY(-10px);
+}
+input{
+    width: 30vw;
+    padding: 0.2rem;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--corPrincipal);
+}
+
+@media (max-width: 1000px) {
+    .left{
+        border-top-right-radius: 200px;
+        border-bottom-right-radius: 200px;
+    }
+}
+@media (max-width: 768px) {
+    .left{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 80px;
+        border-bottom-left-radius: 80px;
+        
+    }
+    .cadastro{
+        grid-template-columns: 1fr;
+    }
+    .bi-arrow-right-circle-fill{
+        display: none;
+    }
+    input{
+        width: 40vw;
+    }
+}
+@media (max-width: 420px) {
+    input{
+        width: 70vw;
+    }
+}
