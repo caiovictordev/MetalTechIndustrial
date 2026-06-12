@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,53 @@
     <script src="src/script/app.js" defer></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
     <title>Metal Tech Industrial</title>
 </head>
 <body>
-    
+    <main class="cadastro">
+        <div class="left">
+            <i class="bi bi-arrow-right-circle-fill"></i>
+            <h1>MetalTech <i class="bi bi-tools"></i></h1>
+
+            <p><strong>Bem-vindo,</strong> <br> a nossa fábrica especializada na <br> fabricação de peças metálicas </p>
+
+            <p>Faça ao lado o registro de ferramentas para a <br> organização de estoque e identificação de equipamentos</p>
+        </div>
+        <div class="right">
+            <div class="txtCadastro">
+                <h1>Cadastro</h1>
+                <h2>Registro de Ferramentas</h2>
+            </div>
+
+            <div class="inputs">
+
+                <div class="dados">
+                    <label for="nome">Nome da Ferramenta</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+                <div class="dados">
+                    <label for="tipo">Tipo de Ferramenta</label>
+                    <input type="text" name="tipo" id="tipo">
+                </div>
+                <div class="dados">
+                    <label for="qtd">Quantidade disponível</label>
+                    <input type="number" name="qtd" id="qtd">
+                </div>
+                <div class="dados">
+                    <label for="setor">Setor de Utilização</label>
+                    <input type="text" name="setor" id="setor">
+                </div>
+                <div class="dados">
+                    <label for="cod">Código da Ferramenta</label>
+                    <input type="number" name="cod" id="cod">
+                </div>
+
+            </div>
+
+            <button type="submit" class="btnSubmit">Cadastrar</button>
+        </div>
+    </main>
 </body>
 </html>
