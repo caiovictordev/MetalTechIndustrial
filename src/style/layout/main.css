@@ -1,4 +1,4 @@
-.cadastro{
+/* .cadastro{
     width: 100%;
     height: 100vh;
     display: grid;
@@ -40,6 +40,9 @@
 .left h1{
     font-size: 3rem;
 }
+.imgLeft{
+    width: 80%;
+}
 .left p strong{
     font-size: 3.5rem;
 }
@@ -71,7 +74,7 @@
     color: var(--corSecundaria);
     font-weight: 700;
     border-radius: 15px;
-    background-color: var(--btnCor);
+    background-color: var(--corPrincipal);
     border: none;
     margin-top: 20px;
     transition: .5s ease;
@@ -87,6 +90,12 @@ input{
     border: 2px solid var(--corPrincipal);
 }
 
+@media (max-width: 1200px) {
+    .left p ~ p {
+        font-size: 0.8rem;
+    }
+    
+}
 @media (max-width: 1000px) {
     .left{
         border-top-right-radius: 200px;
@@ -98,7 +107,6 @@ input{
         border-top-right-radius: 0;
         border-bottom-right-radius: 80px;
         border-bottom-left-radius: 80px;
-        
     }
     .cadastro{
         grid-template-columns: 1fr;
@@ -109,9 +117,218 @@ input{
     input{
         width: 40vw;
     }
+     .left h1{
+        padding: 1.5rem;
+    }
+    .imgLeft{
+        width: 60%;
+    }
+    .left p strong{
+        font-size: 2.9rem;
+    }
+    .left p{
+        font-size: 1.2rem;
+    }
+    .left p ~ p {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+
+    .txtCadastro{
+        padding: 1rem;
+    }
+
 }
 @media (max-width: 420px) {
     input{
         width: 70vw;
     }
+    .left h1{
+        padding: 1.5rem;
+    }
+    .left p strong{
+        font-size: 2.5rem;
+    }
+    .left p{
+        font-size: 1.2rem;
+    }
+    .left p ~ p {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+
+    .txtCadastro{
+        padding: 1rem;
+    }
+} */
+main.cadastro {
+  width: min(1200px, 100%);
+  background: var(--card);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  box-shadow: var(--shadow);
+}
+
+.left {
+  background: linear-gradient(180deg, #1e3a5f 0%, #27486f 100%);
+  color: white;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left i:first-child {
+  font-size: 2rem;
+}
+
+.left h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.left p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.imgLeft {
+  width: 100%;
+  max-width: 260px;
+  object-fit: contain;
+  margin: 15px 0;
+}
+
+.right {
+  padding: 50px;
+}
+
+.txtCadastro {
+  margin-bottom: 35px;
+}
+
+.txtCadastro h1 {
+  color: var(--text);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.txtCadastro h2 {
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dados {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dados label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dados input {
+  height: 50px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 16px;
+  font-size: 0.95rem;
+  transition: 0.25s;
+  background: white;
+}
+
+.dados input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(30, 58, 95, 0.1);
+}
+
+.btnSubmit {
+  margin-top: 30px;
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btnSubmit:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+main.cadastro::after {
+  content: "Lista de Ferramentas";
+  position: absolute;
+  opacity: 0;
+}
+
+main.cadastro + * {
+  width: min(1200px, 100%);
+  margin-top: 24px;
+  background: white;
+  border-radius: 24px;
+  min-height: 300px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+main.cadastro + * table {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  main.cadastro {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    text-align: center;
+    align-items: center;
+  }
+
+  .inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 15px;
+  }
+
+  .left {
+    padding: 30px 25px;
+  }
+
+  .right {
+    padding: 25px;
+  }
+
+  .txtCadastro h1 {
+    font-size: 1.7rem;
+  }
 }
