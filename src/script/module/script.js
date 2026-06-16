@@ -37,7 +37,7 @@ export default function validacao(){
                 throw new Error("Error! Este campo deve conter apenas números");
             }
         }
-        setor(){
+        setorFerramenta(){
             if(this.setor.trim() === ""){
                 throw new Error("Error! O campo 'SETOR DE UTILIZAÇÃO' nâo pode estar vazio.");
             }
@@ -62,6 +62,7 @@ export default function validacao(){
             this.nomeFerramenta()
             this.tipoDaFerramenta()
             this.quantidadeFerramenta()
+            this.setorFerramenta()
             this.validarCodigo()
         }
         salvar(){
@@ -80,7 +81,11 @@ export default function validacao(){
                 codigoFerramenta.value
             )
         ferramenta.validation()
-        alert("Produto Cadastrado com sucesso.")
+        Swal.fire({
+        title: "Produto cadastrado com Sucesso",
+        icon: "success",
+        draggable: true
+        });
 
         ferramenta.salvar()
 
@@ -107,8 +112,11 @@ export default function validacao(){
 
         ol.append(liOl, ul)
         } catch (error) {
-            alert(`mensagem: ${error.message}`)
-            alert(`Nome do Erro: ${error.name}`)
+            Swal.fire({
+  icon: "error",
+  title: error.name,
+  text: error.message,
+});
         }
         
     })
