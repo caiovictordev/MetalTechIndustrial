@@ -53,7 +53,7 @@ export default function validacao(){
                 throw new Error("Error! Deve conter apenas 5 números");
             }
 
-            const codigoExiste = codigoRepetido.some(item => codigoFerramenta === this.codigo)
+            const codigoExiste = codigoRepetido.some(item => item === this.codigo)
             if(codigoExiste){
                 throw new Error("Erro! Já existe um produto com esse código.")
             }

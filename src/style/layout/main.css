@@ -296,6 +296,83 @@ main.cadastro + * table {
   width: 100%;
 }
 
+#list-products {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin: 2rem 0 0;
+    padding: 0 0 0.8rem;
+
+    list-style: none;
+    counter-reset: produtos;
+
+    grid-column: 1 / -1;
+    flex: 0 0 100%;
+    order: 3;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, 280px);
+    gap: 0 1.2rem;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    box-sizing: border-box;
+
+    scrollbar-width: thin;
+    scrollbar-color: #263f68 #e7edf6;
+}
+
+#list-products > li {
+    counter-increment: produtos;
+    background: #263f68;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 8px 20px rgba(38, 63, 104, 0.15);
+}
+
+#list-products > li::before {
+    content: counter(produtos) ". ";
+}
+
+#list-products > ul {
+    list-style: none;
+    margin: 0 0 1.2rem;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #d9e2ef;
+    border-top: none;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 8px 20px rgba(38, 63, 104, 0.12);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    transition: 0.2s ease;
+}
+
+#list-products > ul > li,
+#list-products > ul > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.7rem 0.9rem;
+    background: #f6f8fb;
+    border-radius: 8px;
+    color: #1f2937;
+    font-size: 0.95rem;
+}
+
+#list-products > li:hover + ul {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(38, 63, 104, 0.18);
+}
+
 @media (max-width: 900px) {
   main.cadastro {
     grid-template-columns: 1fr;
